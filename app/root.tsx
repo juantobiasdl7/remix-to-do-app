@@ -5,7 +5,10 @@ import {
   ScrollRestoration,
   LiveReload,
 } from "@remix-run/react";
-import { type LinksFunction } from '@remix-run/node'
+import { type LinksFunction } from '@remix-run/node';
+import faviconAssetUrl from './assets/favicon.svg';
+import fontStyles from "./styles/font.css";
+
 
 export const links: LinksFunction = () => {
 	return [
@@ -13,8 +16,12 @@ export const links: LinksFunction = () => {
 			rel: 'icon',
       type: 'image/svg+xml',
 			// all files in the public directory are served at the root of the site
-			href: '/favicon.svg',
+			href: faviconAssetUrl,
 		},
+    {
+      rel: 'stylesheet',
+      href: fontStyles,
+    }
 	]
 }
 
